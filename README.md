@@ -1,3 +1,7 @@
+# plannedit
+
+PlannedIt.ai is an AI powered planner and routine maker that allows users to create and plan their next vacation, gym routine, cooking schedule and integrate it with existing calendar services
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
