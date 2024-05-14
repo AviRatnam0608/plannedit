@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import OpenAI from "openai";
 import { OPENAI_API_KEY } from "../../secrets";
+import Button from "@/components/atoms/Button";
 
 const openai = new OpenAI({
   apiKey: OPENAI_API_KEY,
@@ -64,6 +65,7 @@ const ChatPage = () => {
       >
         Click to see something
       </button>
+      <Button title="Do something" variant="secondary" />
     </main>
   );
 };
