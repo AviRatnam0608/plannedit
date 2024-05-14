@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import ChatPage from "@/components/chatPage";
-import HomePage from "@/components/homePage";
+import ChatPage from "@/pages/chatPage";
+import HomePage from "@/pages/homePage";
 
 const App = () => {
   return (
