@@ -1,24 +1,34 @@
-import OpenAI from "openai";
-import { OPENAI_API_KEY } from "";
+"use client";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import ChatPage from "@/components/chatPage";
+import HomePage from "@/components/homePage";
 
-const openai = new OpenAI({
-  apiKey: OPENAI_API_KEY,
-});
-
-export default function Home() {
-  // This is the function that will be called when the button is clicked
-  const generateText = async () => {
-    const completion = await openai.chat.completions.create({
-      messages: [{ role: "system", content: "You are a helpful assistant." }],
-      model: "gpt-3.5-turbo",
-    });
-
-    console.log(completion.choices[0]);
-  };
-
+const App = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div>hello</div>
-    </main>
+    <Router>
+      <div className="container mx-auto">
+        <nav className="py-4">
+          <ul className="flex space-x-4">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/read-more">Read More</Link>
+            </li>
+            <li>
+              <Link to="/chatPage">Chat</Link>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/" Component={HomePage} />
+          {/* <Route path="/read-more" component={ReadMorePage} /> */}
+          <Route path="/chatPage" Component={ChatPage} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
+
+export default App;
