@@ -28,13 +28,18 @@ const Navbar: React.FC = () => {
   return (
     <nav className="py-4 flex items-center justify-between">
       <div>
-        <h1 className="text-2xl font-bold text-white">PlannedIt.ai</h1>
+        <Link to="/">
+          <h1 className="text-2xl font-bold text-white">PlannedIt.ai</h1>
+        </Link>
       </div>
       <div>
         <ul className="flex justify-center space-x-4">
           {/* Add more NavItems here */}
           <NavItem to="/" currentPath={location.pathname}>
             Home
+          </NavItem>
+          <NavItem to="/about" currentPath={location.pathname}>
+            About
           </NavItem>
           <NavItem to="/chatPage" currentPath={location.pathname}>
             Chat
