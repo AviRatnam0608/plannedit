@@ -9,6 +9,7 @@ const buttonVariants = {
     transition-all
     duration-250
     ease-in-out
+    disabled: bg-gray-700
     `,
   secondary: `
     p-5 text-md rounded-lg border border-blue 
@@ -27,9 +28,16 @@ interface ButtonProps {
   variant: ButtonVariant;
   linkTo?: string;
   onClick?: () => void;
+  disabled?: boolean;
 }
 
-const Button = ({ title, variant, linkTo, onClick }: ButtonProps) => {
+const Button = ({
+  title,
+  variant,
+  linkTo,
+  onClick,
+  disabled = false,
+}: ButtonProps) => {
   if (linkTo) {
     return (
       <Link to={linkTo}>
@@ -40,7 +48,11 @@ const Button = ({ title, variant, linkTo, onClick }: ButtonProps) => {
     );
   }
   return (
-    <button className={buttonVariants[variant]} onClick={onClick}>
+    <button
+      className={buttonVariants[variant]}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {title}
     </button>
   );
